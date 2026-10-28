@@ -1,0 +1,1464 @@
+ <!DOCTYPE html>
+<!-- saved from url=(0056)file:///C:/Users/USER/Documents/Once/Tiny.html?#nosotros -->
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="Tiny" content="width=device-width, initial-scale=1.0">
+<title>Tiny.</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link href="./Tiny._files/css2" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Montserrat',sans-serif;
+background:#9CF;
+color:0162aa;
+overflow-x:hidden;
+}
+
+/* ===================== */
+/* SCROLL BAR */
+/* ===================== */
+
+::-webkit-scrollbar{
+width:10px;
+}
+
+::-webkit-scrollbar-thumb{
+background:#FFC ;
+border-radius:20px;
+}
+
+/* ===================== */
+/* DECORACIONES */
+/* ===================== */
+
+.circle{
+position:absolute;
+border-radius:60%;
+background:linear-gradient(100deg,#FFC,#FFC);
+z-index:-2;
+filter:blur(10px);
+}
+
+.circle1{
+width:400px;
+height:400px;
+top:-100px;
+right:-100px;
+}
+
+.circle2{
+width:300px;
+height:300px;
+bottom:200px;
+left:-120px;
+}
+
+/* ===================== */
+/* NAVBAR & DROPDOWN */
+/* ===================== */
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:15px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(255,255,255,0.75);
+backdrop-filter:blur(12px);
+z-index:1000;
+border-bottom:1px solid rgba(255,255,255,0.4);
+}
+
+.logo-container {
+display: flex;
+align-items: center;
+}
+
+.logo-img {
+height: 80px;
+width: auto;
+max-width: 260px;
+object-fit: contain;
+}
+
+/* Estilo para el logo grande al inicio, centrado y 3 veces más grande */
+.hero-logo-img {
+height: 260px;
+width: auto;
+max-width: 650px;
+object-fit: contain;
+margin: 0 auto 25px auto;
+display: block;
+}
+
+nav{
+display:flex;
+gap:30px;
+align-items:center;
+}
+
+nav a{
+text-decoration:none;
+color:#9FD7FF ;
+font-size:0.9rem;
+font-weight:500;
+position:relative;
+transition:0.3s;
+}
+
+nav a::after{
+content:'';
+position:absolute;
+width:0%;
+height:2px;
+background:#FFC;
+left:0;
+bottom:-6px;
+transition:0.4s;
+}
+
+nav a:hover::after{
+width:100%;
+}
+
+nav a:hover{
+color:#91C8FF ;
+}
+
+/* MENÚ DESPLEGABLE */
+.dropdown {
+position: relative;
+display: inline-block;
+}
+
+.dropdown-menu {
+display: none;
+position: absolute;
+top: 100%;
+left: 0;
+background: rgba(255, 255, 255, 0.95);
+backdrop-filter: blur(10px);
+min-width: 220px;
+box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+border-radius: 18px;
+padding: 12px 0;
+z-index: 1000;
+border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.dropdown:hover .dropdown-menu {
+display: block;
+}
+
+.dropdown-menu a {
+color: #0162aa;
+padding: 10px 20px;
+display: block;
+font-size: 0.85rem;
+transition: 0.3s;
+}
+
+.dropdown-menu a::after {
+display: none;
+}
+
+.dropdown-menu a:hover {
+background: #9CF;
+color: white;
+}
+
+/* ===================== */
+/* HERO */
+/* ===================== */
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+padding:140px 8% 80px;
+}
+
+.hero-container{
+display:grid;
+grid-template-columns:1.2fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+.hero-text {
+text-align: center;
+}
+
+.hero-text p{
+line-height:2.2;
+margin: 0 auto 40px auto;
+font-size:1.15rem;
+max-width:600px;
+text-align: center;
+}
+
+.btn{
+	display: inline-block;
+	padding: 16px 38px;
+	background: linear-gradient(135deg,#e7eb8f, #e7eb8f);
+	border-radius: 50px;
+	color:#0061A9;
+	text-decoration: none;
+	font-weight: 600;
+	letter-spacing: 1px;
+	box-shadow: 0 15px 30px rgba(217,125,159,0.25);
+	transition: 0.4s;
+}
+
+.btn:hover{
+transform:translateY(-6px);
+}
+
+.hero-image{
+position: relative;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.hero-image img,
+.hero-image video{
+width: 90%;
+max-width: 480px;
+height: 540px;
+object-fit: cover;
+border-radius: 35px;
+box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+display: block;
+margin: 0 auto;
+}
+
+/* Palabras flotantes mejoradas para que se noten claramente */
+.mini-box{
+position: absolute;
+background: #ffffff;
+color: #0061A9;
+padding: 12px 22px;
+border-radius: 20px;
+box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+z-index: 10;
+font-weight: 700;
+font-size: 0.95rem;
+border: 2px solid rgba(1, 98, 170, 0.15);
+}
+
+.box1{
+top: 25px;
+left: -15px;
+}
+
+.box2{
+bottom: 25px;
+right: -15px;
+}
+
+/* ===================== */
+/* SECTION GENERAL */
+/* ===================== */
+
+section{
+padding:110px 8%;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:70px;
+}
+
+.section-title span{
+color:#FFC;
+letter-spacing:3px;
+font-size:0.8rem;
+}
+
+.section-title h2{
+font-family:'Cormorant Garamond',serif;
+font-size:4rem;
+margin-top:10px;
+color:#FFC;
+}
+
+/* ===================== */
+/* CATEGORIAS */
+/* ===================== */
+
+.categories{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.category-card{
+background:white;
+padding:50px 30px;
+border-radius:35px;
+text-align:center;
+box-shadow:0 20px 35px rgba(0,0,0,0.05);
+transition:0.4s;
+position:relative;
+overflow:hidden;
+}
+
+.category-card::before{
+content:'';
+position:absolute;
+width:150px;
+height:150px;
+background:#FFC;
+border-radius:50%;
+top:-60px;
+right:-50px;
+}
+
+.category-card:hover{
+transform:translateY(-10px);
+}
+
+.category-card h3{
+margin:20px 0;
+font-size:1.5rem;
+color:#9CF;
+}
+
+/* ===================== */
+/* SLIDER / GALLERY */
+/* ===================== */
+
+.slider{
+width: 100%;
+max-width: 1100px;
+margin: 0 auto;
+overflow:hidden;
+border-radius:35px;
+box-shadow:0 20px 40px rgba(0,0,0,0.12);
+background: #ffffff;
+position: relative;
+}
+
+.slides{
+display:flex;
+width:500%;
+animation: slideAnimation 18s infinite ease-in-out;
+}
+
+.slides img{
+width:20%;
+height:500px;
+object-fit:cover;
+object-position:center;
+margin:0;
+padding:0;
+border:none;
+display:block;
+}
+
+@keyframes slideAnimation{
+0% { transform: translateX(0%); }
+16% { transform: translateX(0%); }
+20% { transform: translateX(-20%); }
+36% { transform: translateX(-20%); }
+40% { transform: translateX(-40%); }
+56% { transform: translateX(-40%); }
+60% { transform: translateX(-60%); }
+76% { transform: translateX(-60%); }
+80% { transform: translateX(-80%); }
+96% { transform: translateX(-80%); }
+100% { transform: translateX(0%); }
+}
+
+/* ===================== */
+/* PRODUCTOS */
+/* ===================== */
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:35px;
+justify-content:center;
+}
+
+.product{
+background:white;
+border-radius:35px;
+overflow:hidden;
+box-shadow:0 20px 35px rgba(0,0,0,0.06);
+transition:0.4s;
+width: 100%;
+max-width: 400px;
+justify-self: center;
+}
+
+.product:hover{
+transform:translateY(-10px);
+}
+
+.product img{
+height:350px;
+width:100%;
+object-fit:cover;
+}
+
+.product-content{
+padding:30px;
+}
+
+.product-content h3{
+font-size:1.5rem;
+margin-bottom:10px;
+color:#0061A9;
+}
+
+.product-content p{
+line-height:1.8;
+}
+
+.price{
+margin:20px 0;
+font-size:1.3rem;
+font-weight:bold;
+display: flex;
+align-items: center;
+gap: 15px;
+}
+
+.price .old-price {
+font-size: 1.1rem;
+color: #1E5680;
+text-decoration: line-through;
+font-weight: 700;
+opacity: 0.85;
+}
+
+.price .new-price {
+font-size: 1.3rem;
+color: #004080;
+font-weight: 800;
+}
+
+#catalogo .products {
+display: grid;
+grid-template-columns: repeat(3, minmax(300px, 1fr));
+}
+
+@media(min-width: 1000px) {
+#catalogo .products .product:nth-child(7) {
+grid-column: 1 / 2;
+transform: translateX(54%);
+}
+#catalogo .products .product:nth-child(8) {
+grid-column: 2 / 3;
+transform: translateX(54%);
+}
+}
+
+/* ===================== */
+/* BANNER & NOSOTROS */
+/* ===================== */
+
+.banner{
+background:linear-gradient(135deg,#9CF,#9CF);
+padding:80px;
+border-radius:40px;
+text-align:center;
+}
+
+.banner h2{
+font-family: Louis George Cafe Light.ttf;
+font-size:2.4rem;
+color:#0061A9 ;
+margin-bottom:20px;
+line-height:1.3;
+}
+
+.banner p{
+max-width:700px;
+margin:auto;
+line-height:2;
+
+
+
+margin-bottom:30px;
+}
+
+.mv-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 30px;
+margin-top: 40px;
+}
+
+.mv-card {
+background: #ffffdf;
+padding: 40px 30px;
+border-radius: 25px;
+text-align: center;
+box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+}
+
+.mv-card h3 {
+font-family: 'Cormorant Garamond', serif;
+font-size: 2rem;
+color: #0061A9;
+margin-bottom: 15px;
+}
+
+.mv-card p {
+font-size: 0.95rem;
+line-height: 1.8;
+color: #0162aa;
+margin-bottom: 0;
+}
+
+@media(max-width:768px){
+.mv-grid {
+grid-template-columns: 1fr;
+}
+}
+
+/* ===================== */
+/* SPOT PUBLICITARIO */
+/* ===================== */
+
+.spot-container {
+background: white;
+padding: 30px;
+border-radius: 35px;
+box-shadow: 0 20px 35px rgba(0,0,0,0.05);
+text-align: center;
+max-width: 460px;
+margin: 0 auto;
+}
+
+.spot-container video {
+width: 100%;
+max-width: 400px;
+height: auto;
+border-radius: 25px;
+box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+display: block;
+margin: 0 auto;
+}
+
+/* ===================== */
+/* FERIA / PROYECTO EMPRESARIAL */
+/* ===================== */
+
+.feria-container {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 35px;
+align-items: center;
+margin-bottom: 50px;
+}
+
+.proyecto-video-container {
+background: white;
+padding: 30px;
+border-radius: 35px;
+box-shadow: 0 20px 35px rgba(0,0,0,0.05);
+text-align: center;
+width: 100%;
+}
+
+.proyecto-video-container video {
+width: 100%;
+max-width: 450px;
+height: auto;
+border-radius: 25px;
+box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+display: block;
+margin: 0 auto;
+}
+
+.feria-ideas {
+background: white;
+padding: 35px;
+border-radius: 35px;
+box-shadow: 0 20px 35px rgba(0,0,0,0.05);
+width: 100%;
+}
+
+.feria-ideas h3 {
+font-family: 'Cormorant Garamond', serif;
+font-size: 2.2rem;
+color: #0061A9;
+margin-bottom: 20px;
+text-align: center;
+}
+
+.idea-card {
+background: #ffffdf;
+padding: 18px 22px;
+border-radius: 20px;
+margin-bottom: 15px;
+font-size: 0.95rem;
+line-height: 1.6;
+box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+}
+
+.map-container {
+margin-top: 40px;
+background: white;
+padding: 25px;
+border-radius: 35px;
+box-shadow: 0 20px 35px rgba(0,0,0,0.05);
+text-align: center;
+}
+
+.map-container h3 {
+font-family: 'Cormorant Garamond', serif;
+font-size: 2rem;
+color: #0061A9;
+margin-bottom: 15px;
+}
+
+.map-container iframe {
+width: 100%;
+height: 380px;
+border: 0;
+border-radius: 25px;
+}
+
+@media(max-width:900px){
+.feria-container {
+grid-template-columns: 1fr;
+}
+}
+
+/* ===================== */
+/* MANUAL DE IDENTIDAD */
+/* ===================== */
+
+.manual-container {
+background: white;
+padding: 40px 30px;
+border-radius: 35px;
+box-shadow: 0 20px 35px rgba(0,0,0,0.05);
+text-align: center;
+width: 100%;
+margin-bottom: 40px;
+}
+
+.manual-container p {
+font-size: 1rem;
+line-height: 1.8;
+color: #0162aa;
+margin-bottom: 25px;
+}
+
+.pdf-card {
+background: #ffffdf;
+border: 2px dashed #9CF;
+padding: 30px 20px;
+border-radius: 25px;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 15px;
+transition: 0.3s;
+}
+
+.pdf-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.pdf-icon {
+font-size: 3rem;
+}
+
+.pdf-info h3 {
+font-family: 'Cormorant Garamond', serif;
+font-size: 1.8rem;
+color: #0061A9;
+margin-bottom: 5px;
+}
+
+.pdf-info p {
+font-size: 0.9rem;
+color: #555;
+margin-bottom: 0;
+}
+
+/* ===================== */
+/* CONTACTO */
+/* ===================== */
+
+.contact{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+.contact img{
+width:100%;
+border-radius:35px;
+box-shadow:0 20px 35px rgba(0,0,0,0.08);
+}
+
+form{
+background:white;
+padding:50px;
+border-radius:35px;
+box-shadow:0 20px 35px rgba(0,0,0,0.05);
+}
+
+.input{
+margin-bottom:20px;
+}
+
+input,
+textarea{
+width:100%;
+padding:18px;
+border:none;
+background:#9CF;
+border-radius:18px;
+font-family:'Montserrat',sans-serif;
+}
+
+textarea{
+resize:none;
+height:180px;
+}
+
+/* ===================== */
+/* FOOTER */
+/* ===================== */
+
+footer{
+padding:60px 20px;
+text-align:center;
+background:#FAFDE4;
+margin-top:80px;
+}
+
+/* Logo del footer con tamaño equilibrado */
+.footer-logo-img {
+height: 160px;
+width: auto;
+max-width: 400px;
+object-fit: contain;
+margin: 0 auto 20px auto;
+display: block;
+}
+
+.socials{
+margin-top:30px;
+display:flex;
+justify-content:center;
+gap:18px;
+}
+
+.socials a{
+width:50px;
+height:50px;
+display:flex;
+justify-content:center;
+align-items:center;
+background:white;
+border-radius:50%;
+text-decoration:none;
+color:#9CF;
+font-weight:bold;
+transition:0.3s;
+}
+
+.socials a:hover{
+transform:translateY(-5px);
+}
+
+/* ===================== */
+/* ESTILOS NUEVAS SECCIONES */
+/* ===================== */
+
+.fragancias-grid {
+display: grid;
+grid-template-columns: repeat(2, minmax(250px, 1fr));
+gap: 25px;
+max-width: 700px;
+margin: 0 auto;
+}
+
+.fragancia-card {
+background: white;
+border-radius: 30px;
+overflow: hidden;
+text-align: center;
+box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+transition: 0.3s;
+padding-bottom: 25px;
+}
+
+.fragancia-card:hover {
+transform: translateY(-8px);
+}
+
+.fragancia-card img {
+width: 100%;
+height: 200px;
+object-fit: cover;
+border-bottom-left-radius: 20px;
+border-bottom-right-radius: 20px;
+}
+
+.fragancia-card h3 {
+margin: 20px 0 10px;
+font-size: 1.3rem;
+color: #0061A9;
+}
+
+.fragancia-card p {
+padding: 0 15px;
+font-size: 0.9rem;
+line-height: 1.6;
+}
+
+.single-flower-container {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 60px;
+align-items: center;
+background: white;
+padding: 50px;
+border-radius: 35px;
+box-shadow: 0 20px 35px rgba(0,0,0,0.05);
+}
+
+.single-flower-img img {
+width: 100%;
+height: 400px;
+object-fit: cover;
+border-radius: 25px;
+box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+}
+
+.single-flower-text h3 {
+font-family: 'Cormorant Garamond',serif;
+font-size: 2.5rem;
+color: #0061A9;
+margin-bottom: 20px;
+}
+
+.single-flower-text p {
+line-height: 2;
+margin-bottom: 20px;
+font-size: 1rem;
+}
+
+.surprise-section {
+background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,255,255,0.6));
+border-radius: 40px;
+padding: 80px 50px;
+text-align: center;
+box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+border: 2px dashed rgba(255,255,255,0.8);
+}
+
+.surprise-section h2 {
+font-family: 'Cormorant Garamond',serif;
+font-size: 3.5rem;
+color: #0061A9;
+margin-bottom: 20px;
+}
+
+.surprise-section p {
+max-width: 750px;
+margin: 0 auto 30px;
+line-height: 2;
+font-size: 1.05rem;
+}
+
+@media(max-width:900px){
+.single-flower-container{
+grid-template-columns: 1fr;
+}
+.fragancias-grid {
+grid-template-columns: 1fr;
+}
+}
+
+</style>
+</head>
+<body>
+
+<div class="circle circle1"></div>
+<div class="circle circle2"></div>
+
+<!-- NAVBAR -->
+
+<header>
+
+<div class="logo-container">
+<a href="#inicio"><img src="../tiny_logo_fondo_transparente__1_-removebg-preview.png" alt="Logo Tiny" class="logo-img"></a>
+</div>
+
+<nav>
+<a href="#inicio">INICIO</a>
+<a href="#galeria-slider">PRODUCTOS</a>
+<div class="dropdown">
+<a href="#productos">CATÁLOGO ▾</a>
+<div class="dropdown-menu">
+<a href="#ramos">RAMOS</a>
+<a href="#flores-unidad">FLORES POR UNIDAD</a>
+<a href="#fragancias">FRAGANCIAS</a>
+</div>
+</div>
+<div class="dropdown">
+<a href="#nosotros">NOSOTROS ▾</a>
+<div class="dropdown-menu">
+<a href="#mision">MISIÓN</a>
+<a href="#vision">VISIÓN</a>
+</div>
+</div>
+<div class="dropdown">
+<a href="#manual-identidad">IDENTIDAD ▾</a>
+<div class="dropdown-menu">
+<a href="#feria-empresarial">FERIA EMPRESARIAL</a>
+<a href="#look-and-feel">LOOK AND FEEL</a>
+</div>
+</div>
+<a href="#contacto">CONTACTO</a>
+</nav>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero" id="inicio">
+
+<div class="hero-container">
+
+<div class="hero-text">
+
+<img src="../tiny_con_slogan_sin_fondo-removebg-preview.png" alt="Logo Tiny" class="hero-logo-img">
+
+<p>
+Nos dedicamos a la creación de ramos de flores y flores por unidad hechos a mano con limpiapipas,
+estos les darán un toque especial a tu espacio.
+</p>
+
+<a href="#productos" class="btn">VER CATÁLOGO</a>
+
+</div>
+
+<div class="hero-image">
+
+<video autoplay muted loop playsinline>
+<source src="../WhatsApp Video 2026-10-20 at 8.00.04 AM.mp4" type="video/mp4">
+</video>
+
+<div class="mini-box box1">
+Originalidad
+</div>
+
+<div class="mini-box box2">
+Detalle
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CATEGORIAS -->
+
+<section>
+
+<div class="section-title">
+<span>NUESTRA ESENCIA</span>
+<h2>Arte &amp; Dedicación</h2>
+</div>
+
+<div class="categories">
+
+<div class="category-card">
+<h3>Aromas Dulces</h3>
+<p>Fragancias suaves inspiradas en vainilla y esencia de bebé, perfectos para transmitir ternura, frescura y dulzura en cada detalle.</p>
+</div>
+
+<div class="category-card">
+<h3>detalles únicos</h3>
+<p>Flores por unidad para obsequiar junto a un mensaje y una fragancia suave de tu elección.</p>
+</div>
+
+<div class="category-card">
+<h3>Decoración</h3>
+<p>Diseños con estilo único y arreglos florales eternos perfectos para decorar cualquier espacio.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- SLIDER / GALLERY -->
+
+<section id="galeria-slider">
+
+<div class="section-title">
+<span>COLECCIÓN</span>
+<h2>Gallery</h2>
+</div>
+
+<div class="slider">
+
+<div class="slides">
+
+<img src="../WhatsApp Image 2026-10-19 at 11.13.21 AM (6).jpeg" alt="Imagen Galería 1">
+
+<img src="../WhatsApp Image 2026-10-19 at 12.52.15 PM (1).jpeg" alt="Imagen Galería 2">
+
+<img src="../WhatsApp Image 2026-10-19 at 1.55.09 PM.jpeg" alt="Imagen Galería 3">
+
+<img src="../WhatsApp Image 2026-10-19 at 11.13.21 AM (4).jpeg" alt="Imagen Galería 4">
+
+<img src="../WhatsApp Image 2026-10-19 at 12.18.20 PM.jpeg" alt="Imagen Galería 5">
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PRODUCTOS -->
+
+<section id="productos">
+
+<div class="section-title">
+
+<h2>Nuestros Favoritos</h2>
+</div>
+
+<div class="products">
+
+<div class="product">
+<img src="../WhatsApp Image 2026-10-19 at 12.52.15 PM (2).jpeg" alt="Ramo Místico Morado">
+<div class="product-content">
+<h3>Ramo Místico Morado</h3>
+<p>Arreglo floral exclusivo de tonos violetas y blancos, elaborado delicadamente a mano con limpiapipas.</p>
+<div class="price">
+<span class="old-price">$38.000</span>
+<span class="new-price">$32.000</span>
+</div>
+</div>
+</div>
+
+<div class="product">
+<img src="../WhatsApp Image 2026-10-19 at 12.52.15 PM.jpeg" alt="Ramo Sol Radiante">
+<div class="product-content">
+<h3>Ramo Sol Radiante</h3>
+<p>Hermoso arreglo de girasoles eternos hecho a mano, ideal para iluminar y dar vida a cualquier espacio.</p>
+<div class="price">
+<span class="old-price">$38.000</span>
+<span class="new-price">$30.000</span>
+</div>
+</div>
+</div>
+
+<div class="product">
+<img src="../WhatsApp Image 2026-10-19 at 11.12.52 AM (3).jpeg" alt="Ramo Ensueno de Rosas">
+<div class="product-content">
+<h3>Ramo de Ensueño</h3>
+<p>Elegante ramo rosado con detalles únicos y un delicioso bombón de chocolate envuelto en su interior.</p>
+<div class="price">
+<span class="old-price">$38.000</span>
+<span class="new-price">$28.000</span>
+</div>
+</div>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CATÁLOGO GENERAL -->
+
+<section id="catalogo">
+
+<div class="section-title" id="ramos">
+<span>CATÁLOGO</span>
+<h2>Nuestros Ramos</h2>
+</div>
+
+<div class="products">
+
+<div class="product">
+<img src="../WhatsApp Image 2026-10-19 at 11.12.51 AM (1).jpeg" alt="Ramo Rapunzel">
+<div class="product-content">
+<h3>Ramo Rapunzel</h3>
+<p>Inspirado en la magia de Rapunzel con la brillante flor del sol dorada y encantadores tulipanes púrpuras, impregnado con un aroma único.</p>
+<div class="price">
+<span class="old-price">$38.000</span>
+<span class="new-price">$20.000</span>
+</div>
+</div>
+</div>
+
+<div class="product">
+<img src="../WhatsApp Image 2026-10-19 at 11.12.51 AM (2).jpeg" alt="Ramo Van Gogh">
+<div class="product-content">
+<h3>Ramo Van Gogh</h3>
+<p>Una obra de arte floral que utiliza tonos principalmente azules y amarillos junto a postales de La Noche Estrellada y suave fragancia.</p>
+<div class="price">
+<span class="old-price">$38.000</span>
+<span class="new-price">$25.000</span>
+</div>
+</div>
+</div>
+
+<div class="product">
+<img src="../WhatsApp Image 2026-10-19 at 11.12.51 AM (4).jpeg" alt="Ramo Tulipanes Rojos">
+<div class="product-content">
+<h3>Ramo Tulipanes Rojos</h3>
+<p>Apasionados tulipanes rojos hechos a mano con detalles de mariposa dorada y un perfume envolvente que enamora.</p>
+<div class="price">
+<span class="old-price">$38.000</span>
+<span class="new-price">$30.000</span>
+</div>
+</div>
+</div>
+
+<div class="product">
+<img src="../WhatsApp Image 2026-10-19 at 12.52.15 PM (3).jpeg" alt="Ramo Snoopy">
+<div class="product-content">
+<h3>Ramo Snoopy</h3>
+<p>Tiernos tulipanes y adorables caritas de Snoopy hechas a mano, acompañadas de un dulce aroma especial.</p>
+<div class="price">
+<span class="old-price">$38.000</span>
+<span class="new-price">$35.000</span>
+</div>
+</div>
+</div>
+
+<div class="product">
+<img src="../WhatsApp Image 2026-10-19 at 12.52.15 PM (2).jpeg" alt="Ramo Lirios Lilas y Blancos">
+<div class="product-content">
+<h3>Ramo Lirios Lilas y Blancos</h3>
+<p>Hermoso arreglo de lirios lilas y blancos entrelazados con una textura sumamente suave y una fragancia relajante.</p>
+<div class="price">
+<span class="old-price">$38.000</span>
+<span class="new-price">$28.000</span>
+</div>
+</div>
+</div>
+
+<div class="product">
+<img src="../WhatsApp Image 2026-10-19 at 12.52.15 PM.jpeg" alt="Ramo Girasoles y Margaritas">
+<div class="product-content">
+<h3>Ramo Girasoles y Margaritas</h3>
+<p>Una alegre combinación artesanal de radiantes girasoles y puras margaritas con un aroma fresco único.</p>
+<div class="price">
+<span class="old-price">$38.000</span>
+<span class="new-price">$32.000</span>
+</div>
+</div>
+</div>
+
+<div class="product">
+<img src="../WhatsApp Image 2026-10-19 at 11.13.21 AM (7).jpeg" alt="Ramo Girasol Rosado">
+<div class="product-content">
+<h3>Ramo Girasol Rosado</h3>
+<p>Encantador girasol rosado junto a tulipanes rosados que esconden un delicioso chocolate en su interior y suave aroma.</p>
+<div class="price">
+<span class="old-price">$38.000</span>
+<span class="new-price">$24.000</span>
+</div>
+</div>
+</div>
+
+<div class="product">
+<img src="../WhatsApp Image 2026-10-19 at 1.11.23 PM.jpeg" alt="Ramo Tulipanes y Lirios Azules">
+<div class="product-content">
+<h3>Ramo Tulipanes y Lirios Azules</h3>
+<p>Majestuoso ramo de tulipanes azules y lirios azules con un bombón de chocolate integrado y rico perfume envolvente.</p>
+<div class="price">
+<span class="old-price">$38.000</span>
+<span class="new-price">$27.000</span>
+</div>
+</div>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FLORES POR UNIDAD -->
+
+<section id="flores-unidad">
+
+<div class="section-title">
+<span>DETALLES ESPECIALES</span>
+<h2>Flores por Unidad</h2>
+</div>
+
+<div class="single-flower-container">
+
+<div class="single-flower-img">
+<img src="../WhatsApp Image 2026-10-19 at 12.52.15 PM (1).jpeg">
+</div>
+
+<div class="single-flower-text">
+<h3>El regalo perfecto y detallista</h3>
+<p>
+¿Cómo las hacemos? Cada flor por unidad se elabora minuciosamente a mano, moldeando con paciencia y arte cada pétalo con limpiapipas de la más alta calidad para garantizar una textura hermosa y eterna.
+</p>
+<p>
+¿Qué es lo que traen? Cada una viene cuidadosamente empaquetada e incluye un hermoso mensaje personalizado y una suave fragancia a tu elección (vainilla, esencia de bebé), convirtiéndolo en un obsequio inolvidable.
+</p>
+<a href="#contacto" class="btn">PEDIR LA TUYA</a>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FRAGANCIAS -->
+
+<section id="fragancias">
+
+<div class="section-title">
+<span>ESENCIAS SUAVES</span>
+<h2>Nuestras Fragancias</h2>
+</div>
+
+<div class="fragancias-grid">
+
+<div class="fragancia-card">
+<img src="../BEBE-J-TODAS.jpg">
+<h3>Esencia de Bebé</h3>
+<p>Una fragancia tierna, limpia y sumamente delicada que transmite una paz absoluta y una sensación de frescura inigualable en cada detalle.</p>
+</div>
+
+<div class="fragancia-card">
+<img src="../vainilla.webp">
+<h3>Vainilla</h3>
+<p>Un aroma cálido, dulce y sumamente acogedor inspirado en la vainilla pura que aporta un toque de confort y elegancia a tu espacio.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- NOSOTROS Y BANNER -->
+
+<section id="nosotros">
+
+<div class="surprise-section">
+<span>MAGIA Y CREATIVIDAD</span>
+<h2>Un Detalle que Perdura</h2>
+<p>
+Inspirado en la ternura y dedicación de cada diseño, Tiny transforma tus momentos especiales en recuerdos eternos llenos de amor y aroma.
+</p>
+</div>
+
+<div class="banner" style="margin-top: 50px;">
+
+<h2 id="mision" style="scroll-margin-top: 140px;">Creado para transformar momentos especiales en recuerdos que duran para siempre.</h2>
+
+<p id="vision" style="scroll-margin-top: 140px;">Cada pieza está elaborada a mano con dedicación, desde nuestros arreglos florales eternos y flores por unidad hasta los detalles más dulces, pensados para regalar sonrisas y transformar cada rincón en un espacio único.
+</p>
+
+<a href="#contacto" class="btn">EXPLORAR MÁS</a>
+
+<div class="mv-grid">
+
+<div class="mv-card">
+<h3>Misión</h3>
+<p>Tiny es una empresa que busca crear momentos inolvidables a través de flores artesanales hechas con limpiapipas, ofreciendo un detalle único, duradero y lleno de color que expresa afecto sin marchitarse, transformando la decoración y los obseguios tradicionales mediante el diseño de flores creativas en limpiapipas, entregando un producto innovador hecho a mano que añade originalidad a cualquier espacio.</p>
+</div>
+
+<div class="mv-card">
+<h3>Visión</h3>
+<p>Convertirnos en la marca líder de arreglos florales artesanales en limpiapipas a nivel nacional, siendo reconocidos por nuestra innovación en el diseño, la calidad de nuestros productos y la capacidad de transformar los regalos tradicionales en recuerdos eternos, inspirando la creatividad de las personas a través de diseños únicos.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SPOT PUBLICITARIO -->
+
+<section id="spot-publicitario">
+
+<div class="section-title">
+<span>PROMOCIÓN</span>
+<h2>Spot Publicitario</h2>
+</div>
+
+<div class="spot-container">
+<video controls autoplay muted loop playsinline>
+<source src="../WhatsApp Video 2026-10-20 at 8.09.11 AM (1).mp4" type="video/mp4">
+</video>
+</div>
+
+</section>
+
+
+<!-- PROYECTO EMPRESARIAL -->
+
+<section id="feria-empresarial">
+
+<div class="section-title">
+<span>NUESTRA EXPERIENCIA</span>
+<h2>Proyecto Empresarial</h2>
+</div>
+
+<div class="feria-container">
+
+<div class="proyecto-video-container">
+<video controls autoplay muted loop playsinline>
+<source src="../WhatsApp Video 2026-10-20 at 8.09.31 AM (1).mp4" type="video/mp4">
+</video>
+</div>
+
+<div class="feria-ideas">
+<h3>¿Cómo nos fue?</h3>
+<div class="idea-card">
+<p>Nuestros productos artesanales capturaron la atención y los aromas enamoraron a los visitantes.</p>
+</div>
+<div class="idea-card">
+<p>Logramos conectar con nuestros clientes y dar a conocer la creatividad detrás de Tiny.</p>
+</div>
+<div class="idea-card">
+<p>Una experiencia enriquecedora que nos impulsa a seguir innovando y mejorando cada detalle.</p>
+</div>
+</div>
+
+</div>
+
+<!-- MANUAL DE IDENTIDAD -->
+
+<div class="manual-container" id="manual-identidad">
+
+<div class="section-title" style="margin-bottom: 30px;">
+<span style="color: #0061A9;">DOCUMENTO OFICIAL</span>
+<h2 style="color: #0061A9;">Manual de Identidad</h2>
+</div>
+
+<p>
+Conoce los lineamientos de nuestra marca, paleta de colores, tipografías y el uso correcto de nuestra identidad visual en este documento detallado.
+</p>
+
+<div class="pdf-card">
+<div class="pdf-icon">📄</div>
+<div class="pdf-info">
+<h3>Manual_de_Identidad_Tiny.pdf</h3>
+<p>Haz clic para descargar o visualizar el documento PDF</p>
+</div>
+<!-- Reemplaza "ruta-de-tu-archivo/manual.pdf" por la ubicación o nombre de tu archivo PDF -->
+<a href="../Manual.pdf" target="_blank" class="btn">VER / DESCARGAR PDF</a>
+</div>
+
+</div>
+
+<!-- SECCIÓN: LOOK AND FEEL (APLICATIVOS ESPECIALES) -->
+
+<div class="manual-container" id="look-and-feel">
+
+<div class="section-title" style="margin-bottom: 30px;">
+<span style="color: #0061A9; font-size: 0.75rem; text-transform: lowercase; letter-spacing: 2px;">aplicativos especiales</span>
+<h2 style="color: #0061A9; font-size: 2.5rem;">Look and Feel</h2>
+</div>
+
+<p>
+Visualización de nuestros diseños, identidad visual y propuestas aplicadas en diferentes formatos especiales.
+</p>
+
+<div class="pdf-card" style="border-style: dashed; padding: 20px;">
+<!-- Imagen de Look and Feel -->
+<img src="../WhatsApp Image 2026-10-28 at 8.00.47 AM (1).jpeg" alt="Aplicativos Especiales Look and Feel" style="width: 100%; max-width: 850px; height: auto; border-radius: 18px; display: block; object-fit: cover;">
+</div>
+
+</div>
+
+<!-- UBICACIÓN DEL COLEGIO -->
+
+<div class="map-container">
+<h3>Ubicación del Colegio</h3>
+<p style="margin-bottom: 10px; font-weight: 600; color: #0061A9;">Liceo Latinoamericano Del Sur</p>
+<p style="margin-bottom: 20px; font-size: 0.9rem; color: #0162aa;">Cl. 78 Sur #1 H 13, Usme, Bogotá</p>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3977.4589279144865!2d-74.11867!3d4.50234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3fa5c3e1234567%3A0x123456789abcdef!2sCl.%2078%20Sur%20%231%20H%2013%2C%20Bogot%C3%A1!5e0!3m2!1ses!2sco!4v1710000000000!5m2!1ses!2sco" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+</section>
+
+<!-- CONTACTO -->
+
+<section id="contacto">
+
+<div class="section-title">
+    <span>CONTACTO</span>
+    <h2>Hablemos</h2>
+</div>
+
+<div class="contact">
+
+    <img src="../WhatsApp Image 2026-10-19 at 1.38.15 PM.jpeg">
+
+    <form action="https://formspree.io/f/mbgdekjk" method="POST">
+
+        <div class="input">
+            <input type="text" name="nombre" placeholder="Tu nombre" required>
+        </div>
+
+        <div class="input">
+            <input type="email" name="email" placeholder="Tu correo" required>
+        </div>
+
+        <div class="input">
+            <textarea name="mensaje" placeholder="Escribe tu mensaje" required></textarea>
+        </div>
+
+        <button type="submit" class="btn">ENVIAR MENSAJE</button>
+
+    </form>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<img src="../tiny_con_slogan_sin_fondo-removebg-preview.png" alt="Logo Tiny" class="footer-logo-img">
+
+<div class="socials">
+
+<a href="https://www.instagram.com/_tiny.dftns_?utm_source=qr&amp;igsh=M25vYzl0bW81eTEy">IG</a>
+<a href="https://www.tiktok.com/@_tiny.dftns_?_r=1&amp;_t=ZS-98PYhS9QEJr">TT</a>
+<a href="https://www.facebook.com/share/1AxWhHDa45/">FB</a>
+
+</div>
+
+</footer>
+
+
+</body></html>
